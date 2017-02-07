@@ -1,0 +1,39 @@
+Yocto Project Software Layer for NXP i.MX GPU SDK
+=================================================
+
+This layer provides software applications demonstrating the GPU
+capabilities of i.MX 6 and above applications processors.
+
+The application recipes are located in
+meta-imx-gpu-sdk/recipe-graphics/imx-gpu-sdk. Each recipe contains a
+SUMMARY and DESCRIPTION of the application.
+
+This layer depends on:
+
+URI:      git://git.freescale.com/imx/meta-fsl-bsp-release.git
+branch:   imx-morty
+revision: rel_imx_4.9.11-1.0.0_ga
+
+Quick Start Guide
+-----------------
+Set up your basic Yocto Project build environment following the
+instructions in meta-fsl-bsp-release/imx/README. DO NOT START BITBAKE.
+
+Set up the i.MX GPU SDK layer in your build environment by executing
+the setup script. Assuming you're in the build directory:
+
+    $ ../sources/meta-imx-gpu-sdk/setup.sh
+
+Build one of the standard i.MX images. For example:
+
+    $ bitbake fsl-image-gui
+
+The applications will be installed in your rootfs at /opt.
+
+Release Notes
+-------------
+1.0.0
+ - The Surround View application does not support Wayland graphics
+   backend.
+ - The Tesselation RLE application native and nativesdk components do
+   not support 32-bit hosts.
